@@ -9,3 +9,9 @@ MyApp.get "/temp" do
 	erb :"convert/results"
 end
 
+MyApp.get "/distance" do
+	@findDist = FindDist.new(params[:type], params[:dist])
+	@results = @findDist.convert_dist
+
+	erb :"convert/results"
+end

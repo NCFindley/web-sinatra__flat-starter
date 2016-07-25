@@ -4,7 +4,7 @@ class FindTemp
 	def initialize(type,temp)
 
 		@type = type
-		@temp = temp.to_i
+		@temp = temp.to_f
 
 	end
 
