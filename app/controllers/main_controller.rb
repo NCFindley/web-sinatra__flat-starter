@@ -17,5 +17,9 @@ MyApp.get "/dist" do
 end
 
 MyApp.get "/weight" do
-	@findWeight = findWeight.new(params[:type], params[:weight])
-	
+	@findWeight = FindWeight.new(params[:type], params[:weight])
+	@results = @findWeight.convert_multiple
+
+	erb :"convert/results"
+
+end

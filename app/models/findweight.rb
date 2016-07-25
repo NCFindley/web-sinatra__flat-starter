@@ -3,17 +3,23 @@ class FindWeight
 	def initialize(type,weight)
 
 		@type = type
-		@weight = weight
+		@weight = weight.to_f
 
 	end
 
 	def convert_multiple
 
 		if @type == "1"
-			@stone = pound_to_stone
-			@kg = pound_to_kg
+			@stone = pound_to_stone.to_s
+			@kg = pound_to_kg.to_s
 
-			return "Stones " + @stones + " Kilograms " + @kg
+			@conversion = "Stones " + @stone + " Kilograms " + @kg
+
+			return @conversion
+			
+
+
+		
 
 
 
@@ -36,19 +42,23 @@ class FindWeight
 
 	def pound_to_stone
 
-		return @weight / 14
+		@stone =  @weight / 14
+		return @stone
 
 	end
 
 	def pound_to_kg
 
-		return @weight * (1 / 2.2046226218)
+		@kg = @weight * (1 / 2.2046226218)
+
+		return @kg
 
 	end
 
 	def stone_to_pound
 
-		return @weight * 14
+		@pound = @weight * 14
+		return @pound
 	end
 
 
