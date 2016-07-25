@@ -3,7 +3,9 @@ MyApp.get "/" do
 end
 
 MyApp.get "/temp" do
-	@findTemp = FindTemp.new(params [:type], params [:temp])
+	@findTemp = FindTemp.new(params[:type], params[:temp])
+	@results = @findTemp.convert_temp
+
 	erb :"convert/results"
 end
 

@@ -12,16 +12,13 @@ class FindTemp
 
 		if @type == "1"
 			@conversion = (5*(Float(@temp) - 32))/9
-
+		else
+			@conversion = (((9*Float(@temp))/5) + 32)
 		end
 
 
 		return @conversion
 
 	end
-
-
-
-	def
 
 end
